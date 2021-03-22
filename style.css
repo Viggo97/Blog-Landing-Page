@@ -1,0 +1,782 @@
+/* font-family: 'Overpass', sans-serif;
+font-family: 'Ubuntu', sans-serif; */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    max-width: 1920px;
+    min-height: 100vh;
+    font-size: 16px;
+}
+
+header {
+    width: 100%;
+    height: 600px;
+    background: linear-gradient(90deg, hsl(13, 100%, 72%) 0%, hsl(353, 100%, 62%) 100%);
+    border-bottom-left-radius: 150px;
+}
+
+.intro-wrap {
+    height: 100%;
+    background-image: url(./images/bg-pattern-intro.svg);
+    background-repeat: no-repeat;
+    background-size: 220%;
+    background-position: 24% 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.top {
+    display: flex;
+}
+
+.about {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    height: 100px;
+    padding: 50px 0 0 150px;
+
+}
+
+.fas {
+    display: none;
+}
+
+.logo a {
+    font-size: 2.5rem;
+    font-family: 'Overpass', sans-serif;
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+nav {
+    height: 100px;
+    width: 400px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 0 0 50px;
+}
+
+.menu {
+    flex-basis: 30%;
+    display: flex;
+    position: relative;
+}
+
+.menu-btn {
+    font-size: 1rem;
+    font-family: 'Overpass', sans-serif;
+    color: rgb(255, 222, 218);
+    font-weight: 600;
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin: 0 auto;
+}
+
+.menu-btn::after {
+    content: url(./images/icon-arrow-light.svg);
+    margin-left: 5px;
+    display: inline-block;
+    transition: .4s;
+}
+
+.submenu {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 180px;
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 0px 1px #ddd;
+    list-style: none;
+    opacity: 0;
+    transition: .2s linear;
+}
+
+.submenu.products {
+    height: 220px;
+}
+
+.submenu.company {
+    height: 180px;
+}
+
+.submenu.connect {
+    height: 150px;
+}
+
+.menu-btn:focus {
+    text-decoration: underline;
+}
+
+.menu-btn:focus::after {
+    transform: rotate(180deg);
+}
+
+.menu-btn:focus+.submenu {
+    opacity: 1;
+}
+
+.submenu li a {
+    display: block;
+    font-size: 1rem;
+    font-family: 'Overpass', sans-serif;
+    color: black;
+    font-weight: 300;
+    text-decoration: none;
+}
+
+.submenu li a:hover {
+    font-weight: 600;
+}
+
+.user-pannel {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+    height: 100px;
+    padding: 50px 150px 0 0;
+}
+
+.login-btn,
+.signup-btn {
+    font-size: 1rem;
+    font-family: 'Overpass', sans-serif;
+    font-weight: 600;
+    border: none;
+    outline: none;
+    height: 40px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.login-btn {
+    margin-right: 30px;
+    color: white;
+    background-color: transparent;
+    transition: .3s;
+}
+
+.signup-btn {
+    width: 120px;
+    border-radius: 20px;
+    color: hsl(353, 100%, 62%);
+    transition: .3s;
+}
+
+.login-btn:hover {
+    text-decoration: underline;
+}
+
+.signup-btn:hover {
+    border: 1px solid white;
+    background-color: transparent;
+    color: white;
+}
+
+.motto,
+.motto-description {
+    font-family: 'Ubuntu', sans-serif;
+    color: white;
+    font-weight: 400;
+}
+
+.motto {
+    font-size: 4rem;
+}
+
+.motto-description {
+    padding: 20px 0 40px;
+    font-size: 1rem;
+}
+
+.start-btn,
+.learn-btn {
+    font-size: 1rem;
+    font-family: 'Overpass', sans-serif;
+    font-weight: 600;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    height: 40px;
+    width: 120px;
+    cursor: pointer;
+}
+
+.start-btn {
+    margin-right: 15px;
+    background-color: white;
+    color: hsl(353, 100%, 62%)
+}
+
+.learn-btn {
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+}
+
+.start-btn:hover {
+    border: 1px solid white;
+    background-color: transparent;
+    color: white;
+}
+
+.learn-btn:hover {
+    background-color: white;
+    color: hsl(353, 100%, 62%)
+}
+
+.design {
+    display: flex;
+    height: 850px;
+    width: 100%;
+    flex-direction: column;
+    background-image: url(./images/illustration-editor-desktop.svg);
+    background-repeat: no-repeat;
+    background-size: 42% auto;
+    background-position: 105% center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-family: 'Ubuntu', sans-serif;
+    color: hsl(208, 49%, 24%);
+    font-weight: 400;
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-family: 'Ubuntu', sans-serif;
+    color: hsl(208, 49%, 24%);
+    font-weight: 400;
+}
+
+p {
+    font-family: 'Ubuntu', sans-serif;
+    color: black;
+    font-size: 1rem;
+    line-height: 200%;
+}
+
+.design h1 {
+    text-align: center;
+    margin: 140px 0 70px;
+}
+
+.design section {
+    margin-left: 10%;
+    width: 50%;
+    padding-right: 50px;
+}
+
+.design section:nth-child(3) {
+    margin-top: 50px;
+}
+
+.design h2 {
+    margin-bottom: 20px;
+}
+
+.design p {
+    color: hsl(207, 13%, 34%);
+}
+
+.phones {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 400px;
+    background: url(./images/bg-pattern-circles.svg), linear-gradient(90deg, hsl(237, 17%, 21%) 0%, hsl(237, 23%, 32%) 100%);
+    background-repeat: no-repeat;
+    background-size: 70% auto, auto auto;
+    background-position: -50% 88%, 0 0;
+    border-bottom-left-radius: 150px;
+    border-top-right-radius: 150px;
+    position: relative;
+}
+
+.phones-wrap {
+    width: 50%;
+    padding-right: 150px;
+}
+
+.phones h1 {
+    color: white;
+}
+
+.phones p {
+    margin-top: 20px;
+    color: white;
+}
+
+.phones::before {
+    content: url(./images/illustration-phones.svg);
+    transform: scale(1);
+    margin-left: 5%;
+}
+
+.laptop {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    margin-top: 80px;
+    margin-bottom: 20px;
+    padding-top: 160px;
+    height: 750px;
+    background-image: url(./images/illustration-laptop-desktop.svg);
+    background-repeat: no-repeat;
+    background-size: 48% auto;
+    background-position: 0% center;
+}
+
+.laptop section {
+    align-self: flex-end;
+    width: 40%;
+    margin-right: 10%;
+    margin-bottom: 50px;
+}
+
+.laptop h2 {
+    margin-bottom: 20px;
+}
+
+.laptop p {
+    color: hsl(207, 13%, 34%);
+}
+
+footer {
+    height: 360px;
+    display: flex;
+    background-color: hsl(240, 10%, 16%);
+    border-top-right-radius: 150px;
+    padding: 50px 200px 0 0;
+}
+
+footer h1 {
+    display: block;
+    height: 100px;
+    padding: 50px 0 0 150px;
+    font-family: 'Overpass', sans-serif;
+    font-size: 2.5rem;
+    color: white;
+    font-weight: 600;
+}
+
+.links {
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-around;
+    padding: 65px 0 0;
+}
+
+footer h3 {
+    font-family: 'Overpass', sans-serif;
+    font-size: 1rem;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.sublist {
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    list-style: none;
+}
+
+.sublist.company {
+    height: 110px;
+}
+
+.sublist.connect {
+    height: 90px;
+}
+
+.sublist li a {
+    text-decoration: none;
+    font-family: 'Overpass', sans-serif;
+    font-size: 1rem;
+    color: hsl(207, 13%, 34%);
+}
+
+.sublist li a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+@media (max-width: 1024px) {
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1rem;
+    }
+
+    p {
+        font-size: 0.8rem;
+    }
+
+    header {
+        height: 375px;
+    }
+
+    .intro-wrap {
+        background-size: 150% auto;
+    }
+
+    .logo {
+        padding: 40px 0 0 50px;
+    }
+
+    nav {
+        padding: 50px 0 0 20px;
+    }
+
+    div.user-pannel {
+        padding: 50px 50px 0 0;
+    }
+
+    .motto {
+        font-size: 2.5rem;
+    }
+
+    .design {
+        height: 500px;
+        background-size: 50% auto;
+        background-position: 125% center;
+    }
+
+    .design h1 {
+        margin: 50px 0 30px;
+    }
+
+    .design h2 {
+        margin-bottom: 10px;
+    }
+
+    .design section:nth-child(3) {
+        margin-top: 30px;
+    }
+
+    .phones {
+        height: 300px;
+    }
+
+    .phones::before {
+        transform: scale(.7);
+        margin-left: -50px;
+        padding-top: 43px;
+    }
+
+    .phones-wrap {
+        padding-right: 50px;
+    }
+
+    .laptop {
+        margin-top: 60px;
+        margin-bottom: 80px;
+        padding-top: 50px;
+        height: 400px;
+        background-size: 50% auto;
+    }
+
+    .laptop section {
+        margin-bottom: 30px;
+    }
+
+    .laptop h2 {
+        margin-bottom: 10px;
+    }
+
+    footer {
+        padding: 0 150px 0 0;
+        height: 275px;
+    }
+
+    footer h1 {
+        height: 50px;
+        padding: 30px 0 0 50px;
+    }
+
+    .links {
+        padding: 50px 0 0;
+    }
+}
+
+@media (max-width: 768px) {
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    p {
+        font-size: 0.8rem;
+    }
+
+    header {
+        min-height: 100vh;
+        border-bottom-left-radius: 100px;
+    }
+
+    .intro-wrap {
+        background-size: 400% auto;
+        background-position: 28% 45%;
+    }
+
+    .logo {
+        padding: 50px 0 0 30px;
+    }
+
+    .fas {
+        display: block;
+        margin: 60px 0 0 150px;
+        font-size: 2rem;
+        color: white;
+    }
+
+    nav {
+        padding: 0;
+        position: absolute;
+        top: 120px;
+        left: 10%;
+        width: 80%;
+        height: 0;
+        overflow: hidden;
+        flex-direction: column;
+        background-color: #fff;
+        border-radius: 5px;
+        transition: 1.5s;
+    }
+
+    .active {
+        height: auto;
+    }
+
+    .menu-btn {
+        color: black;
+    }
+
+    .menu {
+        width: 100%;
+        padding: 20px 0;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .submenu {
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: translateX(0);
+        width: 60%;
+        height: 0;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0px 0;
+        background-color: rgb(239, 239, 241);
+        border-radius: 5px;
+        box-shadow: none;
+        list-style: none;
+        opacity: 1;
+        transition: .2s linear;
+    }
+
+    .submenu.products {
+        height: 0;
+    }
+
+    .submenu.company {
+        height: 0;
+    }
+
+    .submenu.connect {
+        height: 0;
+    }
+
+    .menu-btn:focus+.submenu.products {
+        height: 170px;
+        padding: 10px 0;
+    }
+
+    .menu-btn:focus+.submenu.company {
+        height: 150px;
+        padding: 10px 0;
+    }
+
+    .menu-btn:focus+.submenu.connect {
+        height: 120px;
+        padding: 10px 0;
+    }
+
+    div.user-pannel {
+        display: none;
+        padding: 50px 50px 0 0;
+    }
+
+    .motto {
+        font-size: 2rem;
+        text-align: center;
+        padding: 0 30px;
+    }
+
+    .motto-description {
+        text-align: center;
+        padding: 30px 30px 60px;
+    }
+
+    .design {
+        height: auto;
+        background-image: none;
+    }
+
+    .design::after {
+        content: '';
+        width: 100%;
+        height: 330px;
+        background-image: url('./images/illustration-editor-mobile.svg');
+        background-repeat: no-repeat;
+        background-size: 90% auto;
+        background-position: center center;
+    }
+
+    .design section {
+        width: 90%;
+        text-align: center;
+    }
+
+    .design h1 {
+        margin: 50px 0 30px;
+    }
+
+    .design h2 {
+        margin-bottom: 10px;
+    }
+
+    .design section:nth-child(3) {
+        margin-top: 30px;
+    }
+
+    .phones {
+        flex-direction: column;
+        width: 100%;
+        height: 600px;
+        background-size: 150% auto;
+        background-position: center -300%;
+        margin-top: 100px;
+        border-top-right-radius: 100px;
+        border-bottom-left-radius: 100px;
+    }
+
+    .phones::before {
+        display: none;
+    }
+
+    .phones::after {
+        content: url(./images/illustration-phones.svg);
+        margin-left: 5%;
+        transform: scale(.6) translateY(-200%);
+    }
+
+    .phones-wrap {
+        width: 100%;
+        padding: 300px 30px 20px;
+        text-align: center;
+    }
+
+    .laptop {
+        margin-top: 60px;
+        margin-bottom: 80px;
+        padding-top: 50px;
+        height: 500px;
+        background: none;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .laptop::before {
+        content: url('./images/illustration-laptop-mobile.svg');
+        margin-left: 5%;
+        transform: scale(.65) translateY(10%);
+    }
+
+    .laptop section {
+        flex-grow: 1;
+        text-align: center;
+        width: 90%;
+        margin-right: 5%;
+        margin-bottom: 30px;
+    }
+
+    .laptop h2 {
+        margin-bottom: 10px;
+    }
+
+    footer {
+        margin-top: 200px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0 0 50px;
+        height: auto;
+        border-top-right-radius: 100px;
+    }
+
+    footer h1 {
+        width: 100%;
+        height: 50px;
+        padding: 30px 0 0;
+        text-align: center;
+    }
+
+    .links {
+        flex-direction: column;
+        align-items: center;
+        padding: 50px 0 0;
+    }
+
+    .link-list {
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .sublist {
+        text-align: center;
+    }
+}
+
+/* .design,
+    .phones,
+    .laptop,
+    footer {
+        display: none;
+    } */
